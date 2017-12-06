@@ -4,6 +4,9 @@
 #include "animationcanvas.h"
 #include "colortest.h"
 
+static const int SCREEN_WIDTH = 160;
+static const int SCREEN_HEIGHT = 96;
+
 App::App(QWidget *parent) : QWidget(parent)
 {
     renderArea = new RenderArea;
@@ -12,11 +15,11 @@ App::App(QWidget *parent) : QWidget(parent)
     layout->addWidget(renderArea, 0, 0);
     setLayout(layout);
 
-    currentFrame = new AnimationCanvas(128, 96);
+    currentFrame = new AnimationCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
     currentFrame->Fill(0, 0, 0);
     renderArea->setCanvas(currentFrame);
 
-    animation = new ColorTest(128, 96);
+    animation = new ColorTest(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(nextFrame()));
@@ -27,7 +30,7 @@ App::~App() {}
 
 void App::nextFrame()
 {
-    AnimationCanvas* newFrame = new AnimationCanvas(128, 96);
+    AnimationCanvas* newFrame = new AnimationCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     int delay = animation->nextFrame(newFrame);
     timer->setInterval(delay);

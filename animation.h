@@ -2,6 +2,7 @@
 #define ANIMATION_H
 
 #include "canvas.h"
+
 using namespace rgb_matrix;
 
 class Animation

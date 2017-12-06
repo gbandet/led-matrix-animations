@@ -19,6 +19,8 @@ int AnimationCanvas::height() const
 
 void AnimationCanvas::SetPixel(int x, int y, uint8_t red, uint8_t green, uint8_t blue)
 {
+    if (x < 0 || x >= m_width || y < 0 || y >= m_height)
+        return;
     (*matrix)[y * m_width + x] = QColor(red, green, blue);
 }
 
