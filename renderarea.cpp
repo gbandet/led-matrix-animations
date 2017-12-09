@@ -11,13 +11,6 @@ QSize RenderArea::minimumSizeHint() const
     return QSize(canvas->width(), canvas->height());
 }
 
-QSize RenderArea::sizeHint() const
-{
-    if (!canvas)
-        return QSize(0, 0);
-    return QSize(canvas->width(), canvas->height());
-}
-
 void RenderArea::setCanvas(AnimationCanvas* canvas)
 {
     this->canvas = canvas;
@@ -30,6 +23,7 @@ void RenderArea::paintEvent(QPaintEvent* /* event */)
         return;
 
     QPainter painter(this);
+    painter.scale(size().width() / (float) canvas->width(), size().height() / (float) canvas->height());
     painter.fillRect(0, 0, canvas->width(), canvas->height(), Qt::SolidPattern);
     for (int x = 0; x < canvas->width(); x++) {
         for (int y = 0; y < canvas->height(); y++) {

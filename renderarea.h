@@ -11,7 +11,6 @@ public:
     explicit RenderArea(QWidget *parent = 0);
 
     QSize minimumSizeHint() const override;
-    QSize sizeHint() const override;
 
     void setCanvas(AnimationCanvas*);
 
