@@ -17,12 +17,15 @@ SOURCES += main.cpp\
     renderarea.cpp \
     animationcanvas.cpp \
     animation.cpp \
-    colortest.cpp
+    colortest.cpp \
+    screen.cpp
 
 HEADERS  += app.h \
     renderarea.h \
     animationcanvas.h \
     animation.h \
-    colortest.h
+    colortest.h \
+    screen.h
 
-INCLUDEPATH += ./matrix/include ./matrix/lib
+INCLUDEPATH += ./matrix/include ./matrix/lib ./CImg
+LIBS += -lX11 -lpng
