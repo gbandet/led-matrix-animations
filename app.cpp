@@ -2,6 +2,7 @@
 #include "app.h"
 
 #include "animationcanvas.h"
+#include "circles.h"
 #include "colortest.h"
 #include "xmastree.h"
 #include "snowflake.h"
@@ -21,6 +22,7 @@ App::App(QWidget *parent) : QWidget(parent)
     currentFrame->Fill(0, 0, 0);
     renderArea->setCanvas(currentFrame);
 
+    //animation = new Circles(SCREEN_WIDTH, SCREEN_HEIGHT);
     //animation = new ColorTest(SCREEN_WIDTH, SCREEN_HEIGHT);
     //animation = new SnowflakeAnimation(SCREEN_WIDTH, SCREEN_HEIGHT);
     animation = new XMasTree(SCREEN_WIDTH, SCREEN_HEIGHT);

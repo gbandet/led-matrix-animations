@@ -1,5 +1,5 @@
-CXXFLAGS=-Wall -O3 -g -I./CImg
-OBJECTS=animation.o colortest.o led-animations.o screen.o snowflake.o xmastree.o
+CXXFLAGS=-std=gnu++0x -Wall -O3 -g -I./CImg
+OBJECTS=animation.o circles.o colortest.o led-animations.o screen.o snowflake.o xmastree.o
 BINARIES=led-animations
 
 RGB_LIB_DISTRIBUTION=matrix

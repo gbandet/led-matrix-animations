@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <signal.h>
 
+#include "circles.h"
 #include "colortest.h"
 #include "snowflake.h"
 #include "xmastree.h"
@@ -22,9 +23,10 @@ static void loop(RGBMatrix* matrix) {
     offscreen->Fill(0, 0, 0);
     offscreen = matrix->SwapOnVSync(offscreen);
 
+    Circles animation(160, 96);
     //ColorTest animation(160, 96);
     //SnowflakeAnimation animation(160,96);
-    XMasTree animation(160,96);
+    //XMasTree animation(160,96);
 
     while (!interrupt_received) {
         int delay = animation.nextFrame(offscreen);

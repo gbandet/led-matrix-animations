@@ -17,6 +17,7 @@ SOURCES += main.cpp\
     renderarea.cpp \
     animationcanvas.cpp \
     animation.cpp \
+    circles.cpp \
     colortest.cpp \
     screen.cpp \
     snowflake.cpp \
@@ -26,6 +27,7 @@ HEADERS  += app.h \
     renderarea.h \
     animationcanvas.h \
     animation.h \
+    circles.h \
     colortest.h \
     screen.h \
     snowflake.h \
