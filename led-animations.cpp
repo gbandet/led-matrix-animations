@@ -7,6 +7,7 @@
 #include <signal.h>
 
 #include "colortest.h"
+#include "snowflake.h"
 
 using namespace rgb_matrix;
 
@@ -20,7 +21,8 @@ static void loop(RGBMatrix* matrix) {
     offscreen->Fill(0, 0, 0);
     offscreen = matrix->SwapOnVSync(offscreen);
 
-     ColorTest animation(128, 96);
+    //ColorTest animation(160, 96);
+    SnowflakeAnimation animation(160,96);
 
     while (!interrupt_received) {
         int delay = animation.nextFrame(offscreen);

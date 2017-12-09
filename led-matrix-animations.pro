@@ -18,14 +18,16 @@ SOURCES += main.cpp\
     animationcanvas.cpp \
     animation.cpp \
     colortest.cpp \
-    screen.cpp
+    screen.cpp \
+    snowflake.cpp
 
 HEADERS  += app.h \
     renderarea.h \
     animationcanvas.h \
     animation.h \
     colortest.h \
-    screen.h
+    screen.h \
+    snowflake.h
 
 INCLUDEPATH += ./matrix/include ./matrix/lib ./CImg
 LIBS += -lX11 -lpng

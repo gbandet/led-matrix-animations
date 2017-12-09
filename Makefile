@@ -1,5 +1,5 @@
-OBJECTS=animation.o colortest.o led-animations.o
 CXXFLAGS=-Wall -O3 -g -I./CImg
+OBJECTS=animation.o colortest.o led-animations.o screen.o snowflake.o
 BINARIES=led-animations
 
 RGB_LIB_DISTRIBUTION=matrix
@@ -8,7 +8,7 @@ RGB_LIBDIR=$(RGB_LIB_DISTRIBUTION)/lib
 RGB_LIBRARY_NAME=rgbmatrix
 RGB_LIBRARY=$(RGB_LIBDIR)/lib$(RGB_LIBRARY_NAME).a
 
-LDFLAGS+=-L$(RGB_LIBDIR) -l$(RGB_LIBRARY_NAME) -lrt -lm -lpthread -lX11
+LDFLAGS+=-L$(RGB_LIBDIR) -l$(RGB_LIBRARY_NAME) -lrt -lm -lpthread -lpng -lX11
 
 
 all: led-animations

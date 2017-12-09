@@ -3,6 +3,7 @@
 
 #include "animationcanvas.h"
 #include "colortest.h"
+#include "snowflake.h"
 
 static const int SCREEN_WIDTH = 160;
 static const int SCREEN_HEIGHT = 96;
@@ -19,7 +20,8 @@ App::App(QWidget *parent) : QWidget(parent)
     currentFrame->Fill(0, 0, 0);
     renderArea->setCanvas(currentFrame);
 
-    animation = new ColorTest(SCREEN_WIDTH, SCREEN_HEIGHT);
+    //animation = new ColorTest(SCREEN_WIDTH, SCREEN_HEIGHT);
+    animation = new SnowflakeAnimation(SCREEN_WIDTH, SCREEN_WIDTH);
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(nextFrame()));
