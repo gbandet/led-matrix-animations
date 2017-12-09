@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     colortest.cpp \
     screen.cpp \
     snowflake.cpp \
-    xmastree.cpp
+    xmastree.cpp \
+    freqhistogram.cpp
 
 HEADERS  += app.h \
     renderarea.h \
@@ -31,7 +32,8 @@ HEADERS  += app.h \
     colortest.h \
     screen.h \
     snowflake.h \
-    xmastree.h
+    xmastree.h \
+    freqhistogram.h
 
 INCLUDEPATH += ./matrix/include ./matrix/lib ./CImg
 LIBS += -lX11 -lpng
