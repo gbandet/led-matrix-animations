@@ -8,6 +8,7 @@
 
 #include "colortest.h"
 #include "snowflake.h"
+#include "xmastree.h"
 
 using namespace rgb_matrix;
 
@@ -22,7 +23,8 @@ static void loop(RGBMatrix* matrix) {
     offscreen = matrix->SwapOnVSync(offscreen);
 
     //ColorTest animation(160, 96);
-    SnowflakeAnimation animation(160,96);
+    //SnowflakeAnimation animation(160,96);
+    XMasTree animation(160,96);
 
     while (!interrupt_received) {
         int delay = animation.nextFrame(offscreen);

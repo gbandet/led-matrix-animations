@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     animation.cpp \
     colortest.cpp \
     screen.cpp \
-    snowflake.cpp
+    snowflake.cpp \
+    xmastree.cpp
 
 HEADERS  += app.h \
     renderarea.h \
@@ -27,7 +28,8 @@ HEADERS  += app.h \
     animation.h \
     colortest.h \
     screen.h \
-    snowflake.h
+    snowflake.h \
+    xmastree.h
 
 INCLUDEPATH += ./matrix/include ./matrix/lib ./CImg
 LIBS += -lX11 -lpng
