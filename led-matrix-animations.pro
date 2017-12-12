@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     screen.cpp \
     snowflake.cpp \
     xmastree.cpp \
-    freqhistogram.cpp
+    freqhistogram.cpp \
+    text.cpp
 
 HEADERS  += app.h \
     renderarea.h \
@@ -33,7 +34,8 @@ HEADERS  += app.h \
     screen.h \
     snowflake.h \
     xmastree.h \
-    freqhistogram.h
+    freqhistogram.h \
+    text.h
 
-INCLUDEPATH += ./matrix/include ./matrix/lib ./CImg
-LIBS += -lX11 -lpng
+INCLUDEPATH += ./matrix/include ./CImg
+LIBS +=  -L$$_PRO_FILE_PWD_/matrix/lib -lrgbmatrix -lX11 -lpng

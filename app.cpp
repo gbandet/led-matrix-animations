@@ -7,6 +7,7 @@
 #include "xmastree.h"
 #include "snowflake.h"
 #include "freqhistogram.h"
+#include "text.h"
 
 static const int SCREEN_WIDTH = 160;
 static const int SCREEN_HEIGHT = 96;
@@ -27,7 +28,8 @@ App::App(QWidget *parent) : QWidget(parent)
     //animation = new ColorTest(SCREEN_WIDTH, SCREEN_HEIGHT);
     //animation = new SnowflakeAnimation(SCREEN_WIDTH, SCREEN_HEIGHT);
     //animation = new XMasTree(SCREEN_WIDTH, SCREEN_HEIGHT);
-    animation = new FreqHistogram(SCREEN_WIDTH, SCREEN_HEIGHT);
+    //animation = new FreqHistogram(SCREEN_WIDTH, SCREEN_HEIGHT);
+    animation = new ScrollingText(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(nextFrame()));

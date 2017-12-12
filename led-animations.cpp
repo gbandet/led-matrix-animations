@@ -10,6 +10,7 @@
 #include "colortest.h"
 #include "freqhistogram.h"
 #include "snowflake.h"
+#include "text.h"
 #include "transformer.h"
 #include "xmastree.h"
 
@@ -27,9 +28,10 @@ static void loop(RGBMatrix* matrix) {
 
     //Circles animation(160, 96);
     //ColorTest animation(160, 96);
-    FreqHistogram animation(160, 96);
+    //FreqHistogram animation(160, 96);
     //SnowflakeAnimation animation(160,96);
     //XMasTree animation(160,96);
+    ScrollingText animation(160,96);
 
     while (!interrupt_received) {
         int delay = animation.nextFrame(offscreen);
