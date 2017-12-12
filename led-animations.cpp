@@ -10,6 +10,7 @@
 #include "colortest.h"
 #include "freqhistogram.h"
 #include "snowflake.h"
+#include "transformer.h"
 #include "xmastree.h"
 
 using namespace rgb_matrix;
@@ -33,7 +34,7 @@ static void loop(RGBMatrix* matrix) {
     while (!interrupt_received) {
         int delay = animation.nextFrame(offscreen);
         offscreen = matrix->SwapOnVSync(offscreen);
-        usleep(delay);
+        usleep(delay * 1000);
     }
 }
 
@@ -48,6 +49,8 @@ int main(int argc, char *argv[]) {
   RGBMatrix* matrix = rgb_matrix::CreateMatrixFromFlags(&argc, &argv, &defaults);
   if (!matrix)
     return 1;
+  SnakeTransformer transformer(3, 32);
+  matrix->ApplyStaticTransformer(transformer);
 
   signal(SIGTERM, InterruptHandler);
   signal(SIGINT, InterruptHandler);
