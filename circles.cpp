@@ -19,17 +19,18 @@ int Circles::nextFrame(Canvas* canvas)
     int centerx = width / 2;
     int centery = height / 2;
     int color = (count / RING_WIDTH) % colors.size();
-    int radius = count % RING_WIDTH;
-    image.drawRing(centerx, centery, 0, radius, colors[color]);
-    for (int i = 0; i < RING_COUNT; i++) {
-        color = (color - 1) % colors.size();
-        image.drawRing(centerx, centery, radius + 1, radius + RING_WIDTH, colors[color]);
-        radius += RING_WIDTH;
-    }
-    color = (color - 1) % colors.size();
+
+    int radius = count % RING_WIDTH + RING_COUNT * RING_WIDTH;
     if (count % RING_WIDTH != RING_WIDTH - 1) {
-        image.drawRing(centerx, centery, radius + 1, RING_COUNT * RING_WIDTH - 1, colors[color]);
+        image.drawRing(centerx, centery, radius - 1, RING_COUNT * RING_WIDTH - 1, colors[color]);
     }
+    for (int i = 0; i < RING_COUNT; i++) {
+        radius -= RING_WIDTH;
+        color = (color + 1) % colors.size();
+        image.drawRing(centerx, centery, radius - 1, radius + RING_WIDTH, colors[color]);
+    }
+    color = (color + 1) % colors.size();
+    image.drawRing(centerx, centery, 0, radius, colors[color]);
 
     image.writeToCanvas(canvas);
     count++;
