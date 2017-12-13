@@ -9,6 +9,7 @@ class Animation
 {
 public:
     Animation(int width, int height);
+    virtual ~Animation() {};
     virtual int nextFrame(Canvas* canvas) = 0;
 
 protected:
