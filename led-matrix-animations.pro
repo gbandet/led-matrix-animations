@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     snowflake.cpp \
     xmastree.cpp \
     freqhistogram.cpp \
-    text.cpp
+    text.cpp \
+    gif.cpp
 
 HEADERS  += app.h \
     renderarea.h \
@@ -35,7 +36,8 @@ HEADERS  += app.h \
     snowflake.h \
     xmastree.h \
     freqhistogram.h \
-    text.h
+    text.h \
+    gif.h
 
-INCLUDEPATH += ./matrix/include ./CImg
-LIBS +=  -L$$_PRO_FILE_PWD_/matrix/lib -lrgbmatrix -lX11 -lpng
+INCLUDEPATH += ./matrix/include ./CImg /usr/include/ImageMagick/
+LIBS +=  -L$$_PRO_FILE_PWD_/matrix/lib -lrgbmatrix -lX11 -lpng -lMagick++

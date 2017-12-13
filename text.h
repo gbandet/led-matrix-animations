@@ -7,7 +7,6 @@
 #include "graphics.h"
 
 using namespace std;
-using namespace rgb_matrix;
 
 class ScrollingText : public Animation
 {
@@ -18,7 +17,7 @@ public:
 
 private:
     vector<string> sentences;
-    Font font;
+    rgb_matrix::Font font;
     string current_text;
     int current_x;
     int current_y;

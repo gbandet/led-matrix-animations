@@ -5,9 +5,14 @@
 #include <stdlib.h>
 #include <functional>
 
-#include "canvas.h"
-using namespace rgb_matrix;
+#define cimg_use_png
+#define cimg_use_magick
+#include "CImg.h"
 
+#include "canvas.h"
+
+using namespace rgb_matrix;
+using namespace cimg_library;
 using namespace std;
 
 class Pixel {
@@ -28,10 +33,12 @@ public:
 
     Sprite(int width, int height, const char* data);
     Sprite(const char* filename);
+    Sprite(const CImg<unsigned char>& image);
     Pixel getPixel(int x, int y) const;
 
 private:
     vector<Pixel> matrix;
+    void loadImage(const CImg<unsigned char>& image);
 };
 
 

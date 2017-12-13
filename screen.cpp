@@ -1,7 +1,5 @@
 #include "screen.h"
 
-#define cimg_use_png
-#include "CImg.h"
 using namespace cimg_library;
 
 Sprite::Sprite(int width, int height, const char* data)
@@ -23,6 +21,16 @@ Sprite::Sprite(int width, int height, const char* data)
 Sprite::Sprite(const char* filename)
 {
     CImg<unsigned char> image(filename);
+    loadImage(image);
+}
+
+Sprite::Sprite(const CImg<unsigned char>& image)
+{
+    loadImage(image);
+}
+
+void Sprite::loadImage(const CImg<unsigned char>& image)
+{
     width = image.width();
     height = image.height();
     matrix.resize(width * height);
