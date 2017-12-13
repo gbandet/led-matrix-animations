@@ -6,7 +6,6 @@
 #include <functional>
 
 #define cimg_use_png
-#define cimg_use_magick
 #include "CImg.h"
 
 #include "canvas.h"
@@ -32,13 +31,14 @@ public:
     int height;
 
     Sprite(int width, int height, const char* data);
-    Sprite(const char* filename);
-    Sprite(const CImg<unsigned char>& image);
+    Sprite(const char* filename, bool withAlpha = true);
+    Sprite(const CImg<unsigned char>& image, bool withAlpha = true);
     Pixel getPixel(int x, int y) const;
 
 private:
     vector<Pixel> matrix;
-    void loadImage(const CImg<unsigned char>& image);
+    void loadImage(const CImg<unsigned char>& image, bool withAlpha);
+    CImgDisplay dsp;
 };
 
 

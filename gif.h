@@ -2,13 +2,16 @@
 #define GIF_H
 
 #include <vector>
+#include <string>
 #include "animation.h"
 #include "screen.h"
+
+using namespace std;
 
 class AnimatedGIF : public Animation
 {
 public:
-    AnimatedGIF(int width, int height, const char* filename, int delay=100);
+    AnimatedGIF(int width, int height, const char* filename, bool withAlpha = true, int delay=100);
     virtual int nextFrame(Canvas* canvas) override;
 protected:
     vector<Sprite> sprites;

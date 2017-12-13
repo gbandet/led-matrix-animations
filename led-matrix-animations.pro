@@ -39,5 +39,5 @@ HEADERS  += app.h \
     text.h \
     gif.h
 
-INCLUDEPATH += ./matrix/include ./CImg /usr/include/ImageMagick/
-LIBS +=  -L$$_PRO_FILE_PWD_/matrix/lib -lrgbmatrix -lX11 -lpng -lMagick++
+INCLUDEPATH += ./matrix/include ./CImg
+LIBS +=  -L$$_PRO_FILE_PWD_/matrix/lib -lrgbmatrix -lX11 -lpng

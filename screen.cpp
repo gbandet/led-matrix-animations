@@ -18,18 +18,18 @@ Sprite::Sprite(int width, int height, const char* data)
     }
 }
 
-Sprite::Sprite(const char* filename)
+Sprite::Sprite(const char* filename, bool withAlpha)
 {
     CImg<unsigned char> image(filename);
-    loadImage(image);
+    loadImage(image, withAlpha);
 }
 
-Sprite::Sprite(const CImg<unsigned char>& image)
+Sprite::Sprite(const CImg<unsigned char>& image, bool withAlpha)
 {
-    loadImage(image);
+    loadImage(image, withAlpha);
 }
 
-void Sprite::loadImage(const CImg<unsigned char>& image)
+void Sprite::loadImage(const CImg<unsigned char>& image, bool withAlpha)
 {
     width = image.width();
     height = image.height();
@@ -37,8 +37,12 @@ void Sprite::loadImage(const CImg<unsigned char>& image)
 
     for (int x = 0; x < image.width(); x++) {
         for (int y = 0; y < image.height(); y++) {
+            float alpha = 1.;
+            if (withAlpha) {
+                alpha = image(x, y, 0, 3) / 255.;
+            }
             matrix[y * width + x] = Pixel(
-                image(x, y, 0, 0), image(x, y, 0, 1), image(x, y, 0, 2), image(x, y, 0, 3) / 255.);
+                image(x, y, 0, 0), image(x, y, 0, 1), image(x, y, 0, 2), alpha);
         }
     }
 }

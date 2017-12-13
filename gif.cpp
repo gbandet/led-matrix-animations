@@ -1,12 +1,13 @@
 #include "gif.h"
+#include <fstream>
 
-AnimatedGIF::AnimatedGIF(int width, int height, const char* filename, int delay)
+AnimatedGIF::AnimatedGIF(int width, int height, const char* filename, bool withAlpha, int delay)
     : Animation(width, height), count(0), delay(delay), offset_x(0), offset_y(0)
 {
-    CImgList<unsigned char> gif;
-    gif.load_gif_external(filename);
-    for (int i = 0; i < gif.width(); i++) {
-        sprites.push_back(Sprite(gif.at(i)));
+    std::ifstream file(filename);
+    std::string line;
+    while (std::getline(file, line)) {
+        sprites.push_back(Sprite(line.c_str(), withAlpha));
     }
 }
 
@@ -20,15 +21,14 @@ int AnimatedGIF::nextFrame(Canvas* canvas)
 }
 
 PartyParrot::PartyParrot(int width, int height)
-    : AnimatedGIF(width, height, "assets/parrot.gif", 40)
+    : AnimatedGIF(width, height, "assets/parrot/parrot.lst", true, 40)
 {
     offset_x = 20;
     offset_y = -30;
 }
 
 Flames::Flames(int width, int height)
-    : AnimatedGIF(width, height, "assets/flames.gif", 60)
+    : AnimatedGIF(width, height, "assets/flames/flames.lst", false, 60)
 {
-    sprites.erase(sprites.begin());
-    offset_y = -175;
+    offset_y = -160;
 }
