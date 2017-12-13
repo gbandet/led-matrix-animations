@@ -25,6 +25,7 @@ ScrollingText::ScrollingText(int width, int height)
 
 int ScrollingText::nextFrame(Canvas* canvas)
 {
+    canvas->Fill(0, 0, 0);
     DrawText(canvas, font, current_x, current_y, current_color, 0, current_text.c_str());
     current_x -= TEXT_SPEED;
     if (current_x + FONT_WIDTH * (int)current_text.length() < 0) {

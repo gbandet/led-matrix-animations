@@ -1,5 +1,4 @@
 #include "led-matrix.h"
-#include "graphics.h"
 
 #include <unistd.h>
 #include <math.h>
@@ -33,8 +32,8 @@ static void loop(RGBMatrix* matrix) {
     //SnowflakeAnimation animation(160,96);
     //XMasTree animation(160,96);
     //ScrollingText animation(160,96);
-    //PartyParrot animation(SCREEN_WIDTH, SCREEN_HEIGHT);
-    Flames animation(SCREEN_WIDTH, SCREEN_HEIGHT);
+    //PartyParrot animation(160, 96);
+    Flames animation(160, 96);
 
     while (!interrupt_received) {
         int delay = animation.nextFrame(offscreen);
