@@ -27,6 +27,12 @@ public:
     PartyParrot(int width, int height);
 };
 
+class XmasParrot : public AnimatedGIF
+{
+public:
+    XmasParrot(int width, int height);
+};
+
 class Flames : public AnimatedGIF
 {
 public:

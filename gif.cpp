@@ -27,6 +27,13 @@ PartyParrot::PartyParrot(int width, int height)
     offset_y = -30;
 }
 
+XmasParrot::XmasParrot(int width, int height)
+    : AnimatedGIF(width, height, "assets/xmas-parrot/xmas-parrot.lst", true, 40)
+{
+    offset_x = 20;
+    offset_y = -27;
+}
+
 Flames::Flames(int width, int height)
     : AnimatedGIF(width, height, "assets/flames/flames.lst", false, 60)
 {
