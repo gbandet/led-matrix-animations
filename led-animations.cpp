@@ -6,6 +6,8 @@
 #include <signal.h>
 #include <map>
 #include <fstream>
+#include <stdlib.h>
+#include <time.h>
 
 #include "animation.h"
 #include "circles.h"
@@ -84,6 +86,7 @@ static void loop(RGBMatrix* matrix) {
 }
 
 int main(int argc, char *argv[]) {
+  srand(time(NULL));
   RGBMatrix::Options defaults;
   defaults.hardware_mapping = "adafruit-hat";
   defaults.rows = 32;
