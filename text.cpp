@@ -5,7 +5,7 @@
 
 using namespace rgb_matrix;
 
-const int TEXT_SPEED = 2;
+const int TEXT_SPEED = 3;
 const int VERTICAL_MARGIN = 30;
 const int FONT_HEIGHT = 20;
 const int FONT_WIDTH = 10;
@@ -31,7 +31,7 @@ int ScrollingText::nextFrame(Canvas* canvas)
     if (current_x + FONT_WIDTH * (int)current_text.length() < 0) {
         changeSentence();
     }
-    return 80;
+    return 40;
 }
 
 void ScrollingText::changeSentence()
