@@ -36,6 +36,7 @@ int Laser::nextFrame(Canvas *canvas)
         lines.push_back(line);
     }
 
+    canvas->Fill(0, 0, 0);
     for (list<LaserLine>:: iterator it = lines.begin(); it != lines.end(); ++it) {
         float ratio = it->current / (float) it->length;
         float currentx = (it->end_x - it->start_x) * ratio + it->start_x;
