@@ -13,10 +13,7 @@ struct LaserLine {
     int end_y;
     int current;
     int length;
-    int red;
-    int green;
-    int blue;
-
+    int color;
 };
 
 class Laser : public Animation
