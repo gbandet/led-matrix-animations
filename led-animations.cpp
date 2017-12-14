@@ -47,6 +47,7 @@ static map<string, Animation*> getAnimations() {
     animations["snow"] = new SnowGif(SCREEN_WIDTH, SCREEN_HEIGHT);
     animations["slides"] = new SlideShow(SCREEN_WIDTH, SCREEN_HEIGHT);
     animations["laser"] = new Laser(SCREEN_WIDTH, SCREEN_HEIGHT);
+    animations["winter"] = new WinterSnowGif(SCREEN_WIDTH, SCREEN_HEIGHT);
     return animations;
 }
 

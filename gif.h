@@ -5,6 +5,7 @@
 #include <string>
 #include "animation.h"
 #include "screen.h"
+#include "graphics.h"
 
 using namespace std;
 
@@ -43,6 +44,16 @@ class SnowGif : public AnimatedGIF
 {
 public:
     SnowGif(int width, int height);
+};
+
+class WinterSnowGif : public AnimatedGIF
+{
+public:
+    WinterSnowGif(int width, int height);
+    virtual int nextFrame(Canvas* canvas) override;
+
+private:
+    rgb_matrix::Font font;
 };
 
 class SlideShow : public AnimatedGIF

@@ -1,5 +1,6 @@
 #include "gif.h"
 #include <fstream>
+#include "graphics.h"
 
 AnimatedGIF::AnimatedGIF(int width, int height, const char* filename, bool withAlpha, int delay)
     : Animation(width, height), count(0), delay(delay), offset_x(0), offset_y(0)
@@ -42,8 +43,19 @@ Flames::Flames(int width, int height)
 
 SnowGif::SnowGif(int width, int height)
     : AnimatedGIF(width, height, "assets/snow/snow.lst", false, 130)
-{
+{}
 
+WinterSnowGif::WinterSnowGif(int width, int height)
+    : AnimatedGIF(width, height, "assets/snow/snow.lst", false, 130)
+{
+    font.LoadFont("assets/fonts/10x20.bdf");
+}
+
+int WinterSnowGif::nextFrame(Canvas* canvas)
+{
+    int delay = AnimatedGIF::nextFrame(canvas);
+    DrawText(canvas, font, 25, 58, Color(255, 0, 0), 0, "Winter 2017");
+    return delay;
 }
 
 SlideShow::SlideShow(int width, int height)

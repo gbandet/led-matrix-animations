@@ -41,3 +41,16 @@ void ScrollingText::changeSentence()
     current_y = (rand() % (height - 2 * VERTICAL_MARGIN)) + VERTICAL_MARGIN;
     current_color = Color(rand() % 255, rand() % 255, rand() % 255);
 }
+
+FixedText::FixedText(int width, int height)
+    : Animation(width, height), text("Winter 2017")
+{
+    font.LoadFont("assets/fonts/10x20.bdf");
+}
+
+int FixedText::nextFrame(Canvas* canvas)
+{
+    canvas->Fill(0, 0, 0);
+    DrawText(canvas, font, 25, 58, Color(255, 0, 0), 0, text.c_str());
+    return 500;
+}

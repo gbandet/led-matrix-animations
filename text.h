@@ -24,4 +24,15 @@ private:
     Color current_color;
 };
 
+class FixedText : public Animation
+{
+public:
+    FixedText(int width, int height);
+    virtual int nextFrame(Canvas* canvas) override;
+
+private:
+    string text;
+    rgb_matrix::Font font;
+};
+
 #endif // TEXT_H
