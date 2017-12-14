@@ -43,6 +43,9 @@ class SlideShow : public AnimatedGIF
 {
 public:
     SlideShow(int width, int height);
+    virtual int nextFrame(Canvas* canvas) override;
+private:
+    int wait_count;
 };
 
 #endif // GIF_H

@@ -40,7 +40,14 @@ SnowGif::SnowGif(int width, int height)
 }
 
 SlideShow::SlideShow(int width, int height)
-    : AnimatedGIF(width, height, "assets/slideshow/slides.lst", false, 2000)
-{
+    : AnimatedGIF(width, height, "assets/slideshow/slides.lst", false, 500), wait_count(0)
+{}
 
+int SlideShow::nextFrame(Canvas *canvas) {
+    wait_count++;
+    int delay = AnimatedGIF::nextFrame(canvas);
+    if (wait_count % 10 != 0) {
+        count = (count - 1) % sprites.size();
+    }
+    return delay;
 }
