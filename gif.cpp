@@ -49,6 +49,11 @@ SithParrot::SithParrot(int width, int height)
     offset_y = -27;
 }
 
+SaberParrot::SaberParrot(int width, int height)
+    : AnimatedGIF(width, height, "assets/saber-parrot/saber-parrot.lst", true, 40)
+{}
+
+
 Flames::Flames(int width, int height)
     : AnimatedGIF(width, height, "assets/flames/flames.lst", false, 60)
 {

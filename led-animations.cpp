@@ -45,6 +45,7 @@ static map<string, Animation*> getAnimations() {
     animations["xmas-parrot"] = new XmasParrot(SCREEN_WIDTH, SCREEN_HEIGHT);
     animations["jedi-parrot"] = new JediParrot(SCREEN_WIDTH, SCREEN_HEIGHT);
     animations["sith-parrot"] = new SithParrot(SCREEN_WIDTH, SCREEN_HEIGHT);
+    animations["saber-parrot"] = new SaberParrot(SCREEN_WIDTH, SCREEN_HEIGHT);
     animations["flames"] = new Flames(SCREEN_WIDTH, SCREEN_HEIGHT);
     animations["snow"] = new SnowGif(SCREEN_WIDTH, SCREEN_HEIGHT);
     animations["slides"] = new SlideShow(SCREEN_WIDTH, SCREEN_HEIGHT);

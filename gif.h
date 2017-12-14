@@ -46,6 +46,12 @@ public:
     SithParrot(int width, int height);
 };
 
+class SaberParrot : public AnimatedGIF
+{
+public:
+    SaberParrot(int width, int height);
+};
+
 class Flames : public AnimatedGIF
 {
 public:
