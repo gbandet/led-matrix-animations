@@ -24,7 +24,9 @@ SOURCES += main.cpp\
     xmastree.cpp \
     freqhistogram.cpp \
     text.cpp \
-    gif.cpp
+    gif.cpp \
+    laser.cpp \
+    tools.cpp
 
 HEADERS  += app.h \
     renderarea.h \
@@ -37,7 +39,9 @@ HEADERS  += app.h \
     xmastree.h \
     freqhistogram.h \
     text.h \
-    gif.h
+    gif.h \
+    laser.h \
+    tools.h
 
 INCLUDEPATH += ./matrix/include ./CImg
 LIBS +=  -L$$_PRO_FILE_PWD_/matrix/lib -lrgbmatrix -lX11 -lpng

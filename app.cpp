@@ -9,6 +9,7 @@
 #include "freqhistogram.h"
 #include "text.h"
 #include "gif.h"
+#include "laser.h"
 
 static const int SCREEN_WIDTH = 160;
 static const int SCREEN_HEIGHT = 96;
@@ -32,7 +33,8 @@ App::App(QWidget *parent) : QWidget(parent)
     //animation = new FreqHistogram(SCREEN_WIDTH, SCREEN_HEIGHT);
     //animation = new ScrollingText(SCREEN_WIDTH, SCREEN_HEIGHT);
     //animation = new PartyParrot(SCREEN_WIDTH, SCREEN_HEIGHT);
-    animation = new Flames(SCREEN_WIDTH, SCREEN_HEIGHT);
+    //animation = new Flames(SCREEN_WIDTH, SCREEN_HEIGHT);
+    animation = new Laser(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(nextFrame()));
