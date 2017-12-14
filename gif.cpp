@@ -32,3 +32,15 @@ Flames::Flames(int width, int height)
 {
     offset_y = -160;
 }
+
+SnowGif::SnowGif(int width, int height)
+    : AnimatedGIF(width, height, "assets/snow/snow.lst", false, 130)
+{
+
+}
+
+SlideShow::SlideShow(int width, int height)
+    : AnimatedGIF(width, height, "assets/slideshow/slides.lst", false, 2000)
+{
+
+}

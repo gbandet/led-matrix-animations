@@ -5,7 +5,7 @@ Color Tools::hsv_to_rgb(float h, float s, float v)
     if (h < 0 || h > 360 || s < 0 || s > 1 || v < 0 || v > 1) {
         return Color(0, 0, 0);
     }
-    if (h == 360)
+    //if (h == 360)
     float hh = h / 60.;
     int hi = (int) hh;
     float hr = hh - hi;

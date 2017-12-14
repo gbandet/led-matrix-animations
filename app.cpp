@@ -34,7 +34,9 @@ App::App(QWidget *parent) : QWidget(parent)
     //animation = new ScrollingText(SCREEN_WIDTH, SCREEN_HEIGHT);
     //animation = new PartyParrot(SCREEN_WIDTH, SCREEN_HEIGHT);
     //animation = new Flames(SCREEN_WIDTH, SCREEN_HEIGHT);
-    animation = new Laser(SCREEN_WIDTH, SCREEN_HEIGHT);
+    //animation = new Laser(SCREEN_WIDTH, SCREEN_HEIGHT);
+    //animation = new SnowGif(SCREEN_WIDTH, SCREEN_HEIGHT);
+    animation = new SlideShow(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(nextFrame()));

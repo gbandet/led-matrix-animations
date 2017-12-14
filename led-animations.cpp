@@ -12,6 +12,7 @@
 #include "colortest.h"
 #include "freqhistogram.h"
 #include "gif.h"
+#include "laser.h"
 #include "snowflake.h"
 #include "text.h"
 #include "transformer.h"
@@ -40,6 +41,9 @@ static map<string, Animation*> getAnimations() {
     animations["text"] = new ScrollingText(SCREEN_WIDTH, SCREEN_HEIGHT);
     animations["parrot"] = new PartyParrot(SCREEN_WIDTH, SCREEN_HEIGHT);
     animations["flames"] = new Flames(SCREEN_WIDTH, SCREEN_HEIGHT);
+    animations["snow"] = new SnowGif(SCREEN_WIDTH, SCREEN_HEIGHT);
+    animations["slides"] = new SlideShow(SCREEN_WIDTH, SCREEN_HEIGHT);
+    animations["laser"] = new Laser(SCREEN_WIDTH, SCREEN_HEIGHT);
     return animations;
 }
 

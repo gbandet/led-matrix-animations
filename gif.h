@@ -33,4 +33,16 @@ public:
     Flames(int width, int height);
 };
 
+class SnowGif : public AnimatedGIF
+{
+public:
+    SnowGif(int width, int height);
+};
+
+class SlideShow : public AnimatedGIF
+{
+public:
+    SlideShow(int width, int height);
+};
+
 #endif // GIF_H
